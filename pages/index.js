@@ -5,7 +5,7 @@ import styles from "../styles/styles.module.scss";
 import FormCard from "../components/FormCard";
 import {
   BillingInfo,
-  ConfirmPurchase,
+  TermsAndConditioins,
   PersonalInfo,
   SignUp,
 } from "../components/Forms";
@@ -30,10 +30,13 @@ const App = () => {
           <SignUp formStep={formStep} nextFormStep={nextFormStep} />
         )}
         {formStep >= 1 && (
-          <BillingInfo formStep={formStep} nextFormStep={nextFormStep} />
+          <PersonalInfo formStep={formStep} nextFormStep={nextFormStep} />
         )}
         {formStep >= 2 && (
-          <ConfirmPurchase formStep={formStep} nextFormStep={nextFormStep} />
+          <TermsAndConditioins
+            formStep={formStep}
+            nextFormStep={nextFormStep}
+          />
         )}
 
         {formStep > 2 && <FormCompleted />}

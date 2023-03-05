@@ -9,7 +9,7 @@ const schema = yup.object().shape({
   checkbox: yup.bool().oneOf([true], "Checkbox is required"),
 });
 
-export default function ConfirmPurchase({ formStep, nextFormStep }) {
+export default function TermsAndConditioins({ formStep, nextFormStep }) {
   const { setFormValues } = useFormData();
   const formRef = useRef();
 
@@ -39,14 +39,17 @@ export default function ConfirmPurchase({ formStep, nextFormStep }) {
 
   return (
     <div className={formStep === 2 ? styles.showForm : styles.hideForm}>
-      <h2>Confirm Purchase</h2>
+      <h2>Terms And Condition</h2>
 
       <Form ref={formRef} onSubmit={handleSubmit}>
         <div className={styles.formRow}>
-          <CheckBox name="checkbox" label="Ready to go?" />
+          <CheckBox
+            name="checkbox"
+            label="I agree to these Terms and Conditions"
+          />
         </div>
 
-        <button type="submit">Confirm purchase</button>
+        <button type="submit">Confirm Registration</button>
       </Form>
     </div>
   );

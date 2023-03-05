@@ -7,8 +7,8 @@ import * as yup from "yup";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
-  facultyEmail: yup.string().email().required("Email is required"),
-  phone: yup.string().required("Phone number is required"),
+  organizationEmail: yup.string().email().required("Offical Email is required"),
+  phoneNumber: yup.string().required("Phone number is required"),
 });
 
 export default function PersonalInfo({ formStep, nextFormStep }) {
@@ -47,10 +47,14 @@ export default function PersonalInfo({ formStep, nextFormStep }) {
           <Input name="name" label="Name" type="name" />
         </div>
         <div className={styles.formRow}>
-          <Input name="facultyEmail" label="Email" type="email" />
+          <Input
+            name="organizationEmail"
+            label="Organisation Email (Offical email)"
+            type="email"
+          />
         </div>
         <div className={styles.formRow}>
-          <Input name="phoneNumber" label="Email" type="tel" />
+          <Input name="phoneNumber" label="Phone Number" type="tel" />
         </div>
         <button type="submit">Next</button>
       </Form>
