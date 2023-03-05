@@ -12,7 +12,7 @@ const schema = yup.object().shape({
     .required("Address is required"),
 });
 
-export default function BillingInfo({ formStep, nextFormStep }) {
+export default function OrganisationDetails({ formStep, nextFormStep }) {
   const { setFormValues } = useFormData();
   const formRef = useRef();
 
@@ -41,7 +41,7 @@ export default function BillingInfo({ formStep, nextFormStep }) {
   }
 
   return (
-    <div className={formStep === 1 ? styles.showForm : styles.hideForm}>
+    <div className={formStep === 2 ? styles.showForm : styles.hideForm}>
       <h2>Billing Info</h2>
 
       <Form ref={formRef} onSubmit={handleSubmit}>

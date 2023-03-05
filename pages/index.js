@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "../styles/styles.module.scss";
 import FormCard from "../components/FormCard";
 import {
-  BillingInfo,
+  OrganisationDetails,
   TermsAndConditioins,
   PersonalInfo,
   SignUp,
@@ -33,13 +33,16 @@ const App = () => {
           <PersonalInfo formStep={formStep} nextFormStep={nextFormStep} />
         )}
         {formStep >= 2 && (
+          <OrganisationDetails formStep={formStep} nextFormStep={nextFormStep} />
+        )}
+        {formStep >= 3 && (
           <TermsAndConditioins
             formStep={formStep}
             nextFormStep={nextFormStep}
           />
         )}
 
-        {formStep > 2 && <FormCompleted />}
+        {formStep > 3 && <FormCompleted />}
       </FormCard>
     </div>
   );
